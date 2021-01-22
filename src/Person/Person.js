@@ -1,11 +1,13 @@
 import React from 'react';
 
+import './Person.css';
 
 const Person = (props) => {
 	return(
-		<div>
-			<p>Jestem {props.name} i mam {props.age} lat!</p>
+		<div className="persons">
+			<p onClick={props.funckja}>Jestem {props.name} i mam {props.age} lat!</p>
 			<p>{props.children}</p>
+			<input type="text" onChange={props.zmiana} value={props.name}/>
 		</div>
 	)
 }
