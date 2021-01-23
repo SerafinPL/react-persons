@@ -54,32 +54,43 @@ class App extends Component {
       padding: '10px',
       cursor: 'pointer'
     }
+
+    let widok = null;
+
+
+    if (this.state.pokazPersons) {
+      widok = (
+        <div>
+          <Person         // lepsze wyjśćie
+            name={this.state.persons[0].name} 
+            age={this.state.persons[0].age}
+            
+          />
+          <Person 
+            name={this.state.persons[1].name} 
+            age={this.state.persons[1].age}
+            funkcja={() => this.zmienImieHandler("Miłoszek")} // gorsze wyjscie 
+            zmiana={this.zmianaImieniaHandler}>I lubię malować!</Person>
+          <Person 
+            name={this.state.persons[2].name} 
+            age={this.state.persons[2].age}
+            
+          />
+        </div> 
+      );
+    }
+
     return (
       <div className="App">
         <h1> To jest reactowa prosta Aplikacja</h1>
         <p>ale działa na classach</p>
-        <button style={buttonStyle} onClick={this.togglePersonHandler}>(Pokaż/Schowaj) klasowe Elementy</button>
-        { 
-          this.state.pokazPersons === true ? 
-            <div>
-                  <Person         // lepsze wyjśćie
-                    name={this.state.persons[0].name} 
-                    age={this.state.persons[0].age}
-                    
-                  />
-                  <Person 
-                    name={this.state.persons[1].name} 
-                    age={this.state.persons[1].age}
-                    funkcja={() => this.zmienImieHandler("Miłoszek")} // gorsze wyjscie 
-                    zmiana={this.zmianaImieniaHandler}>I lubię malować!</Person>
-                  <Person 
-                    name={this.state.persons[2].name} 
-                    age={this.state.persons[2].age}
-                    
-                  />
-            </div> 
-          : null
-        }
+        <button 
+          style={buttonStyle} 
+          onClick={this.togglePersonHandler}>(Pokaż/Schowaj) klasowe Elementy</button>
+        
+        {widok}    
+          
+        
       </div>
     );
   }
