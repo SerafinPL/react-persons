@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
-import UserInput from './users/UserInput'
-import UserOutput from './users/UserOutput'
+import UserInput from './users/UserInput';
+import UserOutput from './users/UserOutput';
+import './AppUsers.css';
 
 class AppUsers extends Component {
 	
@@ -9,11 +10,17 @@ class AppUsers extends Component {
 		imie: 'Kuba Koder'
 	}
 
+	zmianaUser = (event) =>{
+		this.setState({
+		imie: event.target.value
+		})
+	}
+
 
 	render(){
 		return(
-			<div>
-				<UserInput/>
+			<div className='AppUsers'>
+				<UserInput name={this.state.imie} zmiana={this.zmianaUser}/>
 				<UserOutput imie={this.state.imie}/>
 			</div>
 		)
