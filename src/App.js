@@ -12,7 +12,8 @@ class App extends Component {
       {name: "Richard", age: 33}
 
     ],
-    kolejnaZmienna: 'inna zmienna' // to nie znika
+    kolejnaZmienna: 'inna zmienna', // to nie znika
+    pokazPersons: false
   }
 
   zmienImieHandler = (noweImie) => {
@@ -37,6 +38,13 @@ class App extends Component {
     })
   }
 
+  togglePersonHandler = () => {
+      const czyWidac = this.state.pokazPersons;
+      this.setState ({
+        pokazPersons: !czyWidac
+      })
+  }
+
   render(){
 
     const buttonStyle = {
@@ -50,25 +58,28 @@ class App extends Component {
       <div className="App">
         <h1> To jest reactowa prosta Aplikacja</h1>
         <p>ale działa na classach</p>
-        <button style={buttonStyle} onClick={this.zmienImieHandler.bind(this, "Marcinek")}>Zmień imię</button>
-        <Person         // lepsze wyjśćie
-          name={this.state.persons[0].name} 
-          age={this.state.persons[0].age}
-          
-        />
-        <Person 
-          name={this.state.persons[1].name} 
-          age={this.state.persons[1].age}
-          funckja={() => this.zmienImieHandler("Miłoszek")} // gorsze wyjscie 
-
-          >
-          I lubię malować!
-        </Person>
-        <Person 
-          name={this.state.persons[2].name} 
-          age={this.state.persons[2].age}
-          zmiana={this.zmianaImieniaHandler}
-        />
+        <button style={buttonStyle} onClick={this.togglePersonHandler}>(Pokaż/Schowaj) klasowe Elementy</button>
+        { 
+          this.state.pokazPersons === true ? 
+            <div>
+                  <Person         // lepsze wyjśćie
+                    name={this.state.persons[0].name} 
+                    age={this.state.persons[0].age}
+                    
+                  />
+                  <Person 
+                    name={this.state.persons[1].name} 
+                    age={this.state.persons[1].age}
+                    funkcja={() => this.zmienImieHandler("Miłoszek")} // gorsze wyjscie 
+                    zmiana={this.zmianaImieniaHandler}>I lubię malować!</Person>
+                  <Person 
+                    name={this.state.persons[2].name} 
+                    age={this.state.persons[2].age}
+                    
+                  />
+            </div> 
+          : null
+        }
       </div>
     );
   }

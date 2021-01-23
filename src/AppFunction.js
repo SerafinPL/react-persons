@@ -34,7 +34,7 @@ const AppFunction = props => {
         <h1> To jest reactowa prosta Aplikacja</h1>
         <p>ale działa na Funcjach</p>
         <button onClick={zmienImieHandler.bind(this, "Marcinek")}>Zmień imię</button>
-        <Person 
+        <Person 		/* Lepsze dowązanie*/
         	name={personsState.persons[0].name} 
         	age={personsState.persons[0].age}
         />
@@ -46,7 +46,8 @@ const AppFunction = props => {
         <Person 
         	name={personsState.persons[2].name} 
         	age={personsState.persons[2].age}
-        />
+        	funkcja={() => zmienImieHandler("Miłoszek")} // gorsze wyjscie 
+        />				
       </div>
     );
   
