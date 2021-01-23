@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import AppFunction from './AppFunction';
+
+import AppUsers from './AppUsers'
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <AppUsers/>
     <App />
     <AppFunction />
   </React.StrictMode>,

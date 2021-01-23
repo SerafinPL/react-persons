@@ -6,3 +6,8 @@
 	padding: 15px;
 	text-align: center;
 }
+
+.persons p {
+	display: inline;
+	margin: 20px;
+}

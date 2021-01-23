@@ -17,12 +17,12 @@ const AppFunction = props => {
 
   const [inneState, setInneState] = useState('inna zmienna w innym stanie');
 
-  const zmienImieHandler = () => {
+  const zmienImieHandler = (noweImie) => {
     setPersonsState({
       persons: [
         {name: "Jakub", age: 31},
         {name: "Anitka", age: 27},
-        {name: "Richard", age: 37}
+        {name: noweImie, age: 37}
 
       ]
     })
@@ -33,7 +33,7 @@ const AppFunction = props => {
       <div className="App">
         <h1> To jest reactowa prosta Aplikacja</h1>
         <p>ale działa na Funcjach</p>
-        <button onClick={zmienImieHandler}>Zmień imię</button>
+        <button onClick={zmienImieHandler.bind(this, "Marcinek")}>Zmień imię</button>
         <Person 
         	name={personsState.persons[0].name} 
         	age={personsState.persons[0].age}

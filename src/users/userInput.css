@@ -1,0 +1,10 @@
+.userInput input{
+	margin: auto;
+	display: block;
+
+}
+.userInput h3{
+	margin: auto;
+	display: block;
+	width: 200px;
+}
