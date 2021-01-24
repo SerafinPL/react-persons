@@ -6,10 +6,13 @@ import AppFunction from './AppFunction';
 
 import AppUsers from './AppUsers'
 
+import AppLitery from './litery/AppLitery'
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+  	<AppLitery/>
     <AppUsers/>
     <App />
     <AppFunction />

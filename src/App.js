@@ -18,16 +18,29 @@ class App extends Component {
 
   
 
-  /*zmianaImieniaHandler = (event) => {
-    this.setState({
-      persons: [
-        {name: "Jakub", age: 31},
-        {name: "Anitka", age: 27},
-        {name: event.target.value, age: 37}
+  zmianaImieniaHandler = (event, id) => {
+    
+    const ludzikIndex = this.state.persons.findIndex(value => {
+      return value.id === id;
+    });
 
-      ]
-    })
-  }*/
+    /*const ludzik = this.state.persons[ludzikIndex]; TO JEST REFERENCJA NIE NOWY OBIEKT*/
+    //Nowy obiekt robimy tak
+
+    const ludzik = {
+      ...this.state.persons[ludzikIndex]
+    };
+    // alternatywa ludzik = Object.assign({},this.state.persons[ludzikIndex] );
+
+
+    ludzik.name = event.target.value;
+
+    const noweLudziki = [...this.state.persons];
+    noweLudziki[ludzikIndex] = ludzik;
+
+    this.setState({
+      persons: noweLudziki })
+  }
 
   usunPersonHandler = (personIndex) => {
     /*const ludziki = this.state.persons.slice(); */
@@ -64,12 +77,13 @@ class App extends Component {
     if (this.state.pokazPersons) {
       widok = (     // lepsze wyjśćie
         <div>
-          {this.state.persons.map( (ludzik, index) => {
+          {this.state.persons.map( (value, index) => {
             return( <Person 
                       funkcja={() => this.usunPersonHandler(index)}
-                      name={ludzik.name} 
-                      age={ludzik.age}
-                      key={ludzik.id} 
+                      name={value.name} 
+                      age={value.age}
+                      key={value.id} 
+                      zmiana={(event) => this.zmianaImieniaHandler(event, value.id)}
                     />
 
             )

@@ -1,0 +1,10 @@
+.literyDiv {
+	text-align: center;
+	
+	box-shadow: 0 2px 4px #555;
+	padding: 20px;
+}
+
+.literyDiv input {
+	clear: both;
+}

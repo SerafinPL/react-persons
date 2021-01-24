@@ -18,6 +18,7 @@ const AppFunction = props => {
   const [inneState, setInneState] = useState('inna zmienna w innym stanie');
 
   const zmienImieHandler = (noweImie) => {
+    //this.setState({ dla klasowych
     setPersonsState({
       persons: [
         {name: "Jakub", age: 31},
@@ -29,6 +30,7 @@ const AppFunction = props => {
   }
 
   const zmianaImieniaHandler = (event) => {
+  	//this.setState({ dla klasowych
     setPersonsState({
       persons: [
         {name: "Jakub", age: 31},
