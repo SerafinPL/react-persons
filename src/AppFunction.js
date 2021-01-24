@@ -28,6 +28,17 @@ const AppFunction = props => {
     })
   }
 
+  const zmianaImieniaHandler = (event) => {
+    setPersonsState({
+      persons: [
+        {name: "Jakub", age: 31},
+        {name: "Anitka", age: 27},
+        {name: event.target.value, age: 37}
+
+      ]
+    })
+  }
+
   const [widokState, setWidokState] = useState(false);
 
   const togglePersonHandler = () => {
@@ -63,7 +74,8 @@ const AppFunction = props => {
 		        <Person 
 		        	name={personsState.persons[2].name} 
 		        	age={personsState.persons[2].age}
-		        	funkcja={() => zmienImieHandler("Miłoszek")} // gorsze wyjscie 
+		        	funkcja={() => zmienImieHandler("Miłoszek")} // gorsze wyjscie
+		        	zmiana={zmianaImieniaHandler} 
 		        />
 		    </div>
 		    : null // jak false

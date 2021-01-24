@@ -16,18 +16,9 @@ class App extends Component {
     pokazPersons: false
   }
 
-  zmienImieHandler = (noweImie) => {
-    this.setState({
-      persons: [
-        {name: "Jakub", age: 31},
-        {name: "Anitka", age: 27},
-        {name: noweImie, age: 37}
+  
 
-      ]
-    })
-  }
-
-  zmianaImieniaHandler = (event) => {
+  /*zmianaImieniaHandler = (event) => {
     this.setState({
       persons: [
         {name: "Jakub", age: 31},
@@ -36,7 +27,16 @@ class App extends Component {
 
       ]
     })
+  }*/
+
+  usunPersonHandler = (personIndex) => {
+    const ludziki = this.state.persons;
+    ludziki.splice(personIndex, 1);
+    this.setState({
+      persons :ludziki
+    });
   }
+
 
   togglePersonHandler = () => {
       const czyWidac = this.state.pokazPersons;
@@ -59,23 +59,18 @@ class App extends Component {
 
 
     if (this.state.pokazPersons) {
-      widok = (
+      widok = (     // lepsze wyjśćie
         <div>
-          <Person         // lepsze wyjśćie
-            name={this.state.persons[0].name} 
-            age={this.state.persons[0].age}
-            
-          />
-          <Person 
-            name={this.state.persons[1].name} 
-            age={this.state.persons[1].age}
-            funkcja={() => this.zmienImieHandler("Miłoszek")} // gorsze wyjscie 
-            zmiana={this.zmianaImieniaHandler}>I lubię malować!</Person>
-          <Person 
-            name={this.state.persons[2].name} 
-            age={this.state.persons[2].age}
-            
-          />
+          {this.state.persons.map( (ludzik, index) => {
+            return( <Person 
+                      funkcja={() => this.usunPersonHandler(index)}
+                      name={ludzik.name} 
+                      age={ludzik.age} 
+                    />
+
+            )
+          } ) }
+          
         </div> 
       );
     }
