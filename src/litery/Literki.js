@@ -25,3 +25,5 @@ const Literki = (props) => {
 }
 
 export default Literki;
+
+// nie przydało sie do niczego
