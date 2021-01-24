@@ -7,9 +7,9 @@ class App extends Component {
 
   state = {
     persons: [
-      {name: "Kuba", age: 31},
-      {name: "Anitka", age: 25},
-      {name: "Richard", age: 33}
+      {id: 'sadf3dg', name: "Kuba", age: 31},
+      {id: 'sdf4asa', name: "Anitka", age: 25},
+      {id: 'saasda2', name: "Richard", age: 33}
 
     ],
     kolejnaZmienna: 'inna zmienna', // to nie znika
@@ -30,7 +30,10 @@ class App extends Component {
   }*/
 
   usunPersonHandler = (personIndex) => {
-    const ludziki = this.state.persons;
+    /*const ludziki = this.state.persons.slice(); */
+    // robimy realną kopie tablicy z pomocą slice bez argumentów
+    // lepiej jednak użyć operatora '...' powielania !
+    const ludziki = [...this.state.persons];
     ludziki.splice(personIndex, 1);
     this.setState({
       persons :ludziki
@@ -65,7 +68,8 @@ class App extends Component {
             return( <Person 
                       funkcja={() => this.usunPersonHandler(index)}
                       name={ludzik.name} 
-                      age={ludzik.age} 
+                      age={ludzik.age}
+                      key={ludzik.id} 
                     />
 
             )
