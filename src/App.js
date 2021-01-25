@@ -64,7 +64,8 @@ class App extends Component {
   render(){
 
     const buttonStyle = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'monospace',
       border: '1px solid blue',
       padding: '10px',
@@ -74,7 +75,7 @@ class App extends Component {
     let widok = null;
 
 
-    if (this.state.pokazPersons) {
+    if (this.state.pokazPersons) { // dynamiczne wyświetlanie treści
       widok = (     // lepsze wyjśćie
         <div>
           {this.state.persons.map( (value, index) => {
@@ -91,12 +92,15 @@ class App extends Component {
           
         </div> 
       );
+      buttonStyle.backgroundColor = 'red'; // dynamicznie style
     }
+
+    let klasyParagrafu = ['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
 
     return (
       <div className="App">
         <h1> To jest reactowa prosta Aplikacja</h1>
-        <p>ale działa na classach</p>
+        <p className={klasyParagrafu}>ale działa na classach</p>
         <button 
           style={buttonStyle} 
           onClick={this.togglePersonHandler}>(Pokaż/Schowaj) klasowe Elementy</button>
