@@ -3,6 +3,9 @@ import Person from './Person/Person';
 
 import './App.css';
 
+import Radium, {StyleRoot} from 'radium'; // pakiet do stylowania : sudo selectorów i media Queries
+// działa na klasowych i funkcyjnych komponentach
+
 class App extends Component {
 
   state = {
@@ -69,7 +72,12 @@ class App extends Component {
       font: 'monospace',
       border: '1px solid blue',
       padding: '10px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      //Funkcje dodane za pomocą Radium                 //RADIUM
+      ':hover' : {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
     }
 
     let widok = null;
@@ -93,6 +101,11 @@ class App extends Component {
         </div> 
       );
       buttonStyle.backgroundColor = 'red'; // dynamicznie style
+      //Funkcje dodane za pomocą Radium                          //RADIUM
+      buttonStyle[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
     }
 
     let klasyParagrafu = [];//['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
@@ -106,7 +119,8 @@ class App extends Component {
     /*klasyParagrafu = klasyParagrafu.join(' '); <-tak działa na stricMode*/ 
     klasyParagrafu.join(' ');
     
-    return (
+    return (// wymagane <StyleRoot> aby działały media-queries
+      <StyleRoot>
       <div className="App">
         <h1> To jest reactowa prosta Aplikacja</h1>
         <p className={klasyParagrafu} >ale działa na classach</p>
@@ -118,8 +132,9 @@ class App extends Component {
           
         
       </div>
+      </StyleRoot>
     );
   }
 }
 
-export default App;
+export default Radium(App); // pakiet wyższego rzędu nakładany na mój komponent

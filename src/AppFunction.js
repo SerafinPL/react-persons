@@ -3,6 +3,8 @@ import Person from './Person/Person';
 
 import './App.css';
 
+import Radium, {StyleRoot} from 'radium';
+
 const AppFunction = props => {
 
   const [personsState, setPersonsState]  = useState({
@@ -55,6 +57,7 @@ const AppFunction = props => {
 
   
     return (
+    	<StyleRoot>	
       <div className="App">
         <h1> To jest reactowa prosta Aplikacja</h1>
         <p>ale działa na Funcjach</p>
@@ -82,7 +85,8 @@ const AppFunction = props => {
 		    </div>
 		    : null // jak false
 		}
-      </div>
+      </div> 
+      </StyleRoot>
     );
   
 }
