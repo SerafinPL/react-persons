@@ -95,12 +95,21 @@ class App extends Component {
       buttonStyle.backgroundColor = 'red'; // dynamicznie style
     }
 
-    let klasyParagrafu = ['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
+    let klasyParagrafu = [];//['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
 
+    if (this.state.persons.length <= 2){
+      klasyParagrafu.push('colorRed');
+    }
+    if (this.state.persons.length <=1) {
+      klasyParagrafu.push('bold');
+    }
+    /*klasyParagrafu = klasyParagrafu.join(' '); <-tak działa na stricMode*/ 
+    klasyParagrafu.join(' ');
+    
     return (
       <div className="App">
         <h1> To jest reactowa prosta Aplikacja</h1>
-        <p className={klasyParagrafu}>ale działa na classach</p>
+        <p className={klasyParagrafu} >ale działa na classach</p>
         <button 
           style={buttonStyle} 
           onClick={this.togglePersonHandler}>(Pokaż/Schowaj) klasowe Elementy</button>

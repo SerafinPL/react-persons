@@ -11,12 +11,12 @@ import AppLitery from './litery/AppLitery'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
   	<AppLitery/>
     <AppUsers/>
     <App />
     <AppFunction />
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 );
 
