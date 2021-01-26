@@ -3,6 +3,25 @@ import Person from './Person/Person';
 
 import './App.css';
 
+import styled from 'styled-components';
+
+
+let StyledButton = styled.button`
+
+      background-color: green;
+      color: white;
+      font: monospace;
+      border: 1px solid blue;
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lightblue;
+        color: black;
+      }
+
+  `;
+
 
 
 class App extends Component {
@@ -63,15 +82,13 @@ class App extends Component {
       })
   }
 
+
+
+
   render(){
 
     const buttonStyle = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'monospace',
-      border: '1px solid blue',
-      padding: '10px',
-      cursor: 'pointer',
+      
       
     }
 
@@ -95,6 +112,22 @@ class App extends Component {
           
         </div> 
       );
+
+      StyledButton = styled.button`
+
+      background-color: red;
+      color: black;
+      font: monospace;
+      border: 1px solid blue;
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: salmon;
+        color: black;
+      }
+      `;
+
       buttonStyle.backgroundColor = 'red'; // dynamicznie style
       
     }
@@ -115,9 +148,8 @@ class App extends Component {
       <div className="App">
         <h1> To jest reactowa Aplikacja</h1>
         <p className={klasyParagrafu} >ale działa na classach i Stylowana pakietem Styled-Components</p>
-        <button 
-          style={buttonStyle} 
-          onClick={this.togglePersonHandler}>(Pokaż/Schowaj) klasowe Elementy</button>
+        <StyledButton
+          onClick={this.togglePersonHandler}>(Pokaż/Schowaj) klasowe Elementy</StyledButton>
         
         {widok}    
           
