@@ -59,7 +59,7 @@ const AppFunction = props => {
     return (
     	<StyleRoot>	
       <div className="App">
-        <h1> To jest reactowa prosta Aplikacja</h1>
+        <h1> To jest reactowa Aplikacja</h1>
         <p>ale działa na Funcjach</p>
         <button onClick={togglePersonHandler}>Wyświetl schowaj Funkcyjne Komponenty</button>
 	    {  	widokState === true ? // podobno gorsze rozwiązanie

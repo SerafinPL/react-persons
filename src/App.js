@@ -3,7 +3,8 @@ import Person from './Person/Person';
 
 import './App.css';
 
-import Radium, {StyleRoot} from 'radium'; // pakiet do stylowania : sudo selectorów i media Queries
+//import Radium, {StyleRoot} from 'radium'; 
+// pakiet do stylowania : sudo selectorów i media Queries
 // działa na klasowych i funkcyjnych komponentach
 
 class App extends Component {
@@ -73,11 +74,7 @@ class App extends Component {
       border: '1px solid blue',
       padding: '10px',
       cursor: 'pointer',
-      //Funkcje dodane za pomocą Radium                 //RADIUM
-      ':hover' : {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      
     }
 
     let widok = null;
@@ -101,11 +98,7 @@ class App extends Component {
         </div> 
       );
       buttonStyle.backgroundColor = 'red'; // dynamicznie style
-      //Funkcje dodane za pomocą Radium                          //RADIUM
-      buttonStyle[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
+      
     }
 
     let klasyParagrafu = [];//['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
@@ -119,11 +112,11 @@ class App extends Component {
     /*klasyParagrafu = klasyParagrafu.join(' '); <-tak działa na stricMode*/ 
     klasyParagrafu.join(' ');
     
-    return (// wymagane <StyleRoot> aby działały media-queries
-      <StyleRoot>
+    return (
+      
       <div className="App">
-        <h1> To jest reactowa prosta Aplikacja</h1>
-        <p className={klasyParagrafu} >ale działa na classach</p>
+        <h1> To jest reactowa Aplikacja</h1>
+        <p className={klasyParagrafu} >ale działa na classach i Stylowana pakietem Styled-Components</p>
         <button 
           style={buttonStyle} 
           onClick={this.togglePersonHandler}>(Pokaż/Schowaj) klasowe Elementy</button>
@@ -132,9 +125,9 @@ class App extends Component {
           
         
       </div>
-      </StyleRoot>
+      
     );
   }
 }
 
-export default Radium(App); // pakiet wyższego rzędu nakładany na mój komponent
+export default App;
