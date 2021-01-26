@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Person from './Person/Person';
+import PersonStyled from './Person/PersonStyled-Components';
 
 import './App.css';
 
@@ -24,7 +24,7 @@ const StyledButton = styled.button`
 
 
 
-class App extends Component {
+class AppStyled extends Component {
 
   state = {
     persons: [
@@ -99,7 +99,7 @@ class App extends Component {
       widok = (     // lepsze wyjśćie
         <div>
           {this.state.persons.map( (value, index) => {
-            return( <Person 
+            return( <PersonStyled 
                       funkcja={() => this.usunPersonHandler(index)}
                       name={value.name} 
                       age={value.age}
@@ -151,4 +151,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AppStyled;

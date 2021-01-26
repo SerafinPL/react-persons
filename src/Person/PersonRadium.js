@@ -9,7 +9,7 @@ import Radium from 'radium';
 
 
 
-const Person = (props) => {
+const PersonRadium = (props) => {
 
 
 	// Media-queries za pomocą RADIUM
@@ -30,4 +30,4 @@ const Person = (props) => {
 	)
 }
 
-export default Radium(Person);
+export default Radium(PersonRadium);

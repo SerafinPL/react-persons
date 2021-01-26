@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import AppStyled from './AppStyled-Components';
 import AppRadium from './AppRadium';
 import AppFunction from './AppFunction';
 
@@ -16,8 +17,10 @@ ReactDOM.render(
   	<AppLitery/>
     <AppUsers/>
     <App />
-
+    
     <AppFunction />
+    
+    <AppStyled/>
     <AppRadium/>
   </React.Fragment>,
   document.getElementById('root')

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Person from './Person/PersonRadium';
+import PersonRadium from './Person/PersonRadium';
 
 import './App.css';
 
@@ -7,7 +7,7 @@ import Radium, {StyleRoot} from 'radium';
 // pakiet do stylowania : sudo selectorów i media Queries
 // działa na klasowych i funkcyjnych komponentach
 
-class App extends Component {
+class AppRadium extends Component {
 
   state = {
     persons: [
@@ -88,7 +88,7 @@ class App extends Component {
       widok = (     // lepsze wyjśćie
         <div>
           {this.state.persons.map( (value, index) => {
-            return( <Person 
+            return( <PersonRadium 
                       funkcja={() => this.usunPersonHandler(index)}
                       name={value.name} 
                       age={value.age}
@@ -117,8 +117,8 @@ class App extends Component {
     if (this.state.persons.length <=1) {
       klasyParagrafu.push('bold');
     }
-    /*klasyParagrafu = klasyParagrafu.join(' '); <-tak działa na stricMode*/ 
-    klasyParagrafu.join(' ');
+    klasyParagrafu = klasyParagrafu.join(' ');  
+    
     
     return (// wymagane <StyleRoot> aby działały media-queries
       <StyleRoot>
@@ -138,4 +138,4 @@ class App extends Component {
   }
 }
 
-export default Radium(App); // pakiet wyższego rzędu nakładany na mój komponent
+export default Radium(AppRadium); // pakiet wyższego rzędu nakładany na mój komponent
