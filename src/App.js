@@ -3,9 +3,7 @@ import Person from './Person/Person';
 
 import './App.css';
 
-//import Radium, {StyleRoot} from 'radium'; 
-// pakiet do stylowania : sudo selectorów i media Queries
-// działa na klasowych i funkcyjnych komponentach
+
 
 class App extends Component {
 
