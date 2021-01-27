@@ -1,26 +1,12 @@
 import React, {Component} from 'react';
 import Person from './Person/Person';
 
-import './App.css';
-
-import styled from 'styled-components';
+import classes from'./App.css';
 
 
-const StyledButton = styled.button`
 
-      background-color: ${props => props.alt? 'red' : 'green'};
-      color: white;
-      font: monospace;
-      border: 1px solid blue;
-      padding: 10px;
-      cursor: pointer;
 
-      &:hover {
-        background-color: ${props => props.alt? 'salmon' : 'lightgreen'};
-        color: black;
-      }
 
-  `;
 
 
 
@@ -134,12 +120,13 @@ class App extends Component {
       
       <div className="App">
         <h1> To jest reactowa Aplikacja</h1>
-        <p className={klasyParagrafu} >ale działa na classach i Stylowana pakietem Styled-Components</p>
-        <StyledButton alt={this.state.pokazPersons}
-                      onClick={this.togglePersonHandler}
+        <p className={klasyParagrafu} >ale działa na classach i Stylowana CSS Modules</p>
+        <button className='guzik' 
+                  
+                  onClick={this.togglePersonHandler}
         >
           (Pokaż/Schowaj) klasowe Elementy
-        </StyledButton>
+        </button>
         
         
         {widok}    

@@ -9,3 +9,18 @@
 .bold {
   font-weight: bold;
 }
+
+
+.guzik{
+	background-color: green;
+	color: white;
+  	font: monospace;
+  	border: 1px solid blue;
+  	padding: 10px;
+  	cursor: pointer;
+  }
+
+ .guzik:hover {
+    background-color: lightgreen;
+    color: black;
+  }
