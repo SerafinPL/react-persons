@@ -11,7 +11,7 @@
 }
 
 
-.Guzik{
+.App .Guzik{
 	background-color: green;
 	color: white;
   	font: monospace;
@@ -20,15 +20,15 @@
   	cursor: pointer;
   }
 
-.Guzik:hover {
+.App .Guzik:hover {
     background-color: lightgreen;
     color: black;
   }
 
-.Guzik.Red {
+.App .Guzik.Red {
   background-color: red;
 }
 
-.Guzik.Red:hover {
+.App .Guzik.Red:hover {
   background-color: salmon;
 }
