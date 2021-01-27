@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Person from './Person/Person';
 
-import classes from'./App.css';
+import classes from'./App.module.css';
 
 
 
@@ -121,7 +121,7 @@ class App extends Component {
       <div className="App">
         <h1> To jest reactowa Aplikacja</h1>
         <p className={klasyParagrafu} >ale działa na classach i Stylowana CSS Modules</p>
-        <button className='guzik' 
+        <button className={classes.Guzik}
                   
                   onClick={this.togglePersonHandler}
         >
