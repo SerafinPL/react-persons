@@ -73,13 +73,10 @@ class App extends Component {
 
   render(){
 
-    const buttonStyle = {
-      
-      
-    }
+    
 
     let widok = null;
-
+    let KlasyGuzika = [classes.Guzik];
 
     if (this.state.pokazPersons) { // dynamiczne wyświetlanie treści
       widok = (     // lepsze wyjśćie
@@ -98,30 +95,26 @@ class App extends Component {
           
         </div> 
       );
-
-      
-
-      buttonStyle.backgroundColor = 'red'; // dynamicznie style
-      
+      KlasyGuzika.push(classes.Red);
     }
 
     let klasyParagrafu = [];//['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
 
     if (this.state.persons.length <= 2){
-      klasyParagrafu.push('colorRed');
+      klasyParagrafu.push(classes.colorRed);
     }
     if (this.state.persons.length <=1) {
-      klasyParagrafu.push('bold');
+      klasyParagrafu.push(classes.bold);
     }
     klasyParagrafu = klasyParagrafu.join(' '); 
     
     
     return (
       
-      <div className="App">
+      <div className={classes.App}>
         <h1> To jest reactowa Aplikacja</h1>
         <p className={klasyParagrafu} >ale działa na classach i Stylowana CSS Modules</p>
-        <button className={classes.Guzik}
+        <button className={KlasyGuzika.join(' ')}
                   
                   onClick={this.togglePersonHandler}
         >

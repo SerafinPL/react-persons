@@ -20,7 +20,15 @@
   	cursor: pointer;
   }
 
- .Guzik:hover {
+.Guzik:hover {
     background-color: lightgreen;
     color: black;
   }
+
+.Guzik.Red {
+  background-color: red;
+}
+
+.Guzik.Red:hover {
+  background-color: salmon;
+}
