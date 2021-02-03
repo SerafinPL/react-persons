@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PersonStyled from './Person/PersonStyled-Components';
+import PersonStyled from '../components/Persons/Person/PersonStyled-Components';
 
 import './App.css';
 

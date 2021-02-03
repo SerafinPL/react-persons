@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PersonRadium from './Person/PersonRadium';
+import PersonRadium from '../components/Persons/Person/PersonRadium';
 
 import './App.css';
 

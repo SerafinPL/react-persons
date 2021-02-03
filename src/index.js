@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import AppStyled from './AppStyled-Components';
-import AppRadium from './AppRadium';
-import AppFunction from './AppFunction';
+import App from './containers/App';
+import AppStyled from './containers/AppStyled-Components';
+import AppRadium from './containers/AppRadium';
+import AppFunction from './containers/AppFunction';
 
-import AppUsers from './AppUsers'
+import AppUsers from './users/AppUsers'
 
 import AppLitery from './litery/AppLitery'
 
