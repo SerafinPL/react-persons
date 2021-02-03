@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Person from './components/Persons/Person/Person';
+import Persons from './components/Persons/Persons';
 
 import classes from'./App.module.css';
 
@@ -77,17 +78,12 @@ class App extends Component {
     if (this.state.pokazPersons) { // dynamiczne wyświetlanie treści
       widok = (     // lepsze wyjśćie
         <div>
-          {this.state.persons.map( (value, index) => {
-            return( <Person 
-                      funkcja={() => this.usunPersonHandler(index)}
-                      name={value.name} 
-                      age={value.age}
-                      key={value.id} 
-                      zmiana={(event) => this.zmianaImieniaHandler(event, value.id)}
-                    />
-
-            )
-          } ) }
+          <Persons 
+              persons={this.state.persons}
+              clicked={this.usunPersonHandler}
+              changed={this.zmianaImieniaHandler}
+          />
+          
           
         </div> 
       );
