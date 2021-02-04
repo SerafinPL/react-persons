@@ -9,7 +9,7 @@ import classes from'./Person.module.css';
 
 const Person = (props) => {
 
-
+	console.log('Person.js rendering...');
 	
 
 	return(

@@ -9,6 +9,10 @@ import classes from'./App.module.css';
 
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    console.log('App.js constructor');
+  }
 
   state = {
     persons: [
@@ -19,6 +23,15 @@ class App extends Component {
     ],
     kolejnaZmienna: 'inna zmienna', // to nie znika
     pokazPersons: false
+  }
+
+  static getDerivedStateFromProps(props, state){
+    console.log('App.js getDerivedStateFromProps props: ' , props);
+    return state;
+  }
+
+  componentDidMount() {
+    console.log('App.js componentDidMount');
   }
 
   zmianaImieniaHandler = (event, id) => {
@@ -63,7 +76,7 @@ class App extends Component {
   }
 
   render(){
-
+    console.log('App.js render');
     let widok = null;
     
     if (this.state.pokazPersons) { // dynamiczne wyświetlanie treści
@@ -85,7 +98,7 @@ class App extends Component {
         
         <Cockpit 
           title={this.props.appTitle}
-          showPersons={this.state.showPersons} 
+          showPersons={this.state.pokazPersons} 
           persons={this.state.persons}
           clicked={this.togglePersonHandler}
         />

@@ -19,8 +19,9 @@ const Cockpit = (props) => {
     let KlasyGuzika = [classes.Guzik];
     if (props.showPersons){
     	KlasyGuzika.push(classes.Red);
-    }
 
+    }
+    
 
 	return(
 		<div className={classes.Cockpit}>
