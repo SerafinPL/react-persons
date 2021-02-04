@@ -21,8 +21,6 @@ class App extends Component {
     pokazPersons: false
   }
 
-  
-
   zmianaImieniaHandler = (event, id) => {
     
     const ludzikIndex = this.state.persons.findIndex(value => {
@@ -31,12 +29,10 @@ class App extends Component {
 
     /*const ludzik = this.state.persons[ludzikIndex]; TO JEST REFERENCJA NIE NOWY OBIEKT*/
     //Nowy obiekt robimy tak
-
     const ludzik = {
       ...this.state.persons[ludzikIndex]
     };
     // alternatywa ludzik = Object.assign({},this.state.persons[ludzikIndex] );
-
 
     ludzik.name = event.target.value;
 
@@ -66,16 +62,10 @@ class App extends Component {
       })
   }
 
-
-
-
   render(){
-
-    
 
     let widok = null;
     
-
     if (this.state.pokazPersons) { // dynamiczne wyświetlanie treści
       
       widok = (     // lepsze wyjśćie
@@ -88,8 +78,6 @@ class App extends Component {
 
     }
 
-    
-    
     return (
       
       <div className={classes.App}>
