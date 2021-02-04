@@ -11,3 +11,10 @@
 	display: inline;
 	margin: 20px;
 }
+
+@media (min-width: 500px){
+
+	.persons{
+			width: 450px;
+		}
+}

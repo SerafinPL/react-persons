@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Person from '../components/Persons/Person/Person';
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 import classes from'./App.module.css';
 
@@ -76,6 +77,7 @@ class App extends Component {
     let KlasyGuzika = [classes.Guzik];
 
     if (this.state.pokazPersons) { // dynamiczne wyświetlanie treści
+      
       widok = (     // lepsze wyjśćie
         <div>
           <Persons 
@@ -83,10 +85,10 @@ class App extends Component {
               clicked={this.usunPersonHandler}
               changed={this.zmianaImieniaHandler}
           />
-          
-          
         </div> 
       );
+
+
       KlasyGuzika.push(classes.Red);
     }
 
@@ -104,18 +106,15 @@ class App extends Component {
     return (
       
       <div className={classes.App}>
-        <h1> To jest reactowa Aplikacja</h1>
-        <p className={klasyParagrafu} >ale działa na classach i Stylowana CSS Modules</p>
-        <button className={KlasyGuzika.join(' ')}
-                  
-                  onClick={this.togglePersonHandler}
-        >
-          (Pokaż/Schowaj) klasowe Elementy
-        </button>
         
         
+        <Cockpit 
+          classPar={klasyParagrafu} 
+          classBut={KlasyGuzika.join(' ')} 
+          click={this.togglePersonHandler}
+        />
         {widok}    
-          
+        
         
       </div>
       
