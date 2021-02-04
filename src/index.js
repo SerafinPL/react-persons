@@ -16,7 +16,7 @@ ReactDOM.render(
   <React.Fragment>
   	<AppLitery/>
     <AppUsers/>
-    <App />
+    <App appTitle="Person Manager"/>
     
     <AppFunction />
     
