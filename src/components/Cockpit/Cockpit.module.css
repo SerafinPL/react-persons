@@ -1,0 +1,32 @@
+
+
+.colorRed{
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
+.Cockpit .Guzik{
+	background-color: green;
+	color: white;
+  	font: monospace;
+  	border: 1px solid blue;
+  	padding: 10px;
+  	cursor: pointer;
+  }
+
+.Cockpit .Guzik:hover {
+    background-color: lightgreen;
+    color: black;
+  }
+
+.Cockpit .Guzik.Red {
+  background-color: red;
+}
+
+.Cockpit .Guzik.Red:hover {
+  background-color: salmon;
+}
