@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Person from './components/Persons/Person/Person';
-import Persons from './components/Persons/Persons';
+import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons';
 
 import classes from'./App.module.css';
 

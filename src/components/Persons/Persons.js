@@ -8,7 +8,7 @@ const Persons = (props) => 	props.persons.map( (value, index) => {
                       name={value.name} 
                       age={value.age}
                       key={value.id} 
-                      zmiana={(event) => prosp.changed(event, value.id)}
+                      zmiana={(event) => props.changed(event, value.id)}
                     />
 
             )
