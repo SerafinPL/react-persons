@@ -74,33 +74,20 @@ class App extends Component {
     
 
     let widok = null;
-    let KlasyGuzika = [classes.Guzik];
+    
 
     if (this.state.pokazPersons) { // dynamiczne wyświetlanie treści
       
       widok = (     // lepsze wyjśćie
-        <div>
           <Persons 
               persons={this.state.persons}
               clicked={this.usunPersonHandler}
               changed={this.zmianaImieniaHandler}
           />
-        </div> 
-      );
+        );
 
-
-      KlasyGuzika.push(classes.Red);
     }
 
-    let klasyParagrafu = [];//['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
-
-    if (this.state.persons.length <= 2){
-      klasyParagrafu.push(classes.colorRed);
-    }
-    if (this.state.persons.length <=1) {
-      klasyParagrafu.push(classes.bold);
-    }
-    klasyParagrafu = klasyParagrafu.join(' '); 
     
     
     return (
@@ -109,9 +96,9 @@ class App extends Component {
         
         
         <Cockpit 
-          classPar={klasyParagrafu} 
-          classBut={KlasyGuzika.join(' ')} 
-          click={this.togglePersonHandler}
+          showPersons={this.state.showPersons} 
+          persons={this.state.persons}
+          clicked={this.togglePersonHandler}
         />
         {widok}    
         
