@@ -9,6 +9,32 @@ class Persons extends Component 	{
     return state;
   } 
 
+  // componentWillReceiveProps(props){
+  //   console.log('Persons.js componetWillReceiveProps', props);
+  // } WYCOFANY
+
+  //  componentWillUpdate{
+
+  // } WYCOFANY
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('Persons.js shouldComponentUpdate');
+    return true;
+    // return tak lub nie update component
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState){
+    console.log('Persons.js getSnapshotBeforeUpdate');
+    return {message : 'SnapshotMessage'};
+  }
+
+  //render
+
+  componentDidUpdate(prevProps, prevState, Snapshot){
+    console.log('Persons.js componentDidUpdate');
+    console.log(Snapshot);
+  }
+
     render(){
 			console.log('PERSONS.js rendering....');
 			return(
