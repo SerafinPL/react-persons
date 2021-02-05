@@ -5,6 +5,7 @@ import App from './containers/App';
 import AppStyled from './containers/AppStyled-Components';
 import AppRadium from './containers/AppRadium';
 import AppFunction from './containers/AppFunction';
+import AppPersonsFunction from './containers/AppPersonsFunction';
 
 import AppUsers from './users/AppUsers'
 
@@ -16,8 +17,9 @@ ReactDOM.render(
   <React.Fragment>
   	<AppLitery/>
     <AppUsers/>
-    <App appTitle="Person Manager"/>
     
+    <AppPersonsFunction appTitle="Person's function Menager"/>
+    <App appTitle="Person's class Manager"/>
     <AppFunction />
     
     <AppStyled/>

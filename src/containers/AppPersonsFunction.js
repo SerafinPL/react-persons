@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Person from '../components/Persons/Person/Person-class';
-import Persons from '../components/Persons/Persons-class';
+import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 import classes from'./App.module.css';
@@ -8,7 +8,7 @@ import classes from'./App.module.css';
 
 
 
-class App extends Component {
+class AppPF extends Component {
   constructor(props){
     super(props);
     console.log('App.js constructor');
@@ -115,4 +115,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AppPF;
