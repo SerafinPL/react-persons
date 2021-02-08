@@ -3,7 +3,7 @@ import Person from '../components/Persons/Person/Person';
 
 import './App.css';
 
-import Radium, {StyleRoot} from 'radium';
+
 
 const AppFunction = props => {
 
@@ -57,7 +57,7 @@ const AppFunction = props => {
 
   
     return (
-    	<StyleRoot>	
+    	
       <div className="App">
         <h1> To jest reactowa Aplikacja</h1>
         <p>ale działa na Funkcjach</p>
@@ -86,7 +86,7 @@ const AppFunction = props => {
 		    : null // jak false
 		}
       </div> 
-      </StyleRoot>
+      
     );
   
 }
