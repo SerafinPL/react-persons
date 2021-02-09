@@ -30,12 +30,16 @@ class App extends Component {
     return state;
   }
 
-  componentWillMount(){
-    console.log('App.js componentWillMount');
-  }
+  // componentWillMount(){
+  //   console.log('App.js componentWillMount');
+  // }
 
   componentDidMount() {
     console.log('App.js componentDidMount');
+  }
+
+  componentDidUpdate() {
+    console.log('App.js componentDidUpdate');
   }
 
   zmianaImieniaHandler = (event, id) => {
