@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PersonCL from '../components/Persons/Person/Person-class';
 import PersonsCL from '../components/Persons/Persons-class';
 import Cockpit from '../components/Cockpit/Cockpit';
+import WithClass from '../hoc/withClass';
 
 import classes from'./App.module.css';
 
@@ -109,8 +110,8 @@ class App extends Component {
 
     return (
       
-      <div className={classes.App}>
-        <button 
+      <WithClass classes={classes.App}>
+        <button className={classes.Guzik}
           onClick={() => {
                       if (this.state.showCockpit){
                         this.setState({showCockpit : false});
@@ -132,7 +133,7 @@ class App extends Component {
         {widok}    
         
         
-      </div>
+      </WithClass>
       
     );
   }

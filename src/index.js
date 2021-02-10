@@ -17,9 +17,9 @@ ReactDOM.render(
   <React.Fragment>
   	<AppLitery/>
     <AppUsers/>
-    
-    <AppPersonsFunction appTitle="Person's function Menager"/>
     <App appTitle="Person's class Manager"/>
+    <AppPersonsFunction appTitle="Person's function Menager"/>
+    
     <AppFunction />
     
     <AppStyled/>

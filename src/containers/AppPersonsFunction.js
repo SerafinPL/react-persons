@@ -97,7 +97,7 @@ class AppPF extends Component {
 
     return (
       
-      <div className={classes.App}>
+      <div className={classes.AppPF}>
         
         
         <Cockpit 
