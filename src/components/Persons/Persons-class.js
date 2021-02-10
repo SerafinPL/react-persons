@@ -5,7 +5,7 @@ import Person from './Person/Person';
 class Persons extends Component 	{
 
   static getDerivedStateFromProps(props, state){
-    console.log('Persons.js getDerivedStateFromProps props: ' , props);
+    console.log('PERSONS.js getDerivedStateFromProps props: ' , props);
     return state;
   } 
 
@@ -18,25 +18,29 @@ class Persons extends Component 	{
   // } WYCOFANY
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('Persons.js shouldComponentUpdate');
-    return true;
+    console.log('PERSONS.js shouldComponentUpdate');
+    if (nextProps.persons !== this.props.persons){
+      return true;
+    } else {
+      return false;
+    }
     // return tak lub nie update component
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState){
-    console.log('Persons.js getSnapshotBeforeUpdate');
+    console.log('PERSONS.js getSnapshotBeforeUpdate');
     return {message : 'SnapshotMessage'};// snapshot używany w componentDidUpdate
   }
 
   //render
 
   componentDidUpdate(prevProps, prevState, Snapshot){
-    console.log('Persons.js componentDidUpdate');
+    console.log('PERSONS.js componentDidUpdate');
     console.log(Snapshot); // uzycie snapshot z getSnapshotBeforeUpdate
   }
 
   componentWillUnmount(){
-    console.log('Persons.js componentWillUnmount');
+    console.log('PERSONS.js componentWillUnmount');
   }
 
     render(){
