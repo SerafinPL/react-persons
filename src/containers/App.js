@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Person from '../components/Persons/Person/Person-class';
-import Persons from '../components/Persons/Persons-class';
+import PersonCL from '../components/Persons/Person/Person-class';
+import PersonsCL from '../components/Persons/Persons-class';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 import classes from'./App.module.css';
@@ -98,7 +98,7 @@ class App extends Component {
     if (this.state.pokazPersons) { // dynamiczne wyświetlanie treści
       
       widok = (     // lepsze wyjśćie
-          <Persons 
+          <PersonsCL 
               persons={this.state.persons}
               clicked={this.usunPersonHandler}
               changed={this.zmianaImieniaHandler}

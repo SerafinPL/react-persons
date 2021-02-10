@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import Person from './Person/Person';
+import PersonCL from './Person/Person-class';
 
 
 class Persons extends PureComponent 	{
@@ -55,7 +55,7 @@ class Persons extends PureComponent 	{
 			console.log('PERSONS.js rendering....');
 			return(
 				this.props.persons.map( (value, index) => {
-            		return( <Person 
+            		return( <PersonCL 
                       funkcja={() => this.props.clicked(index)}
                       name={value.name} 
                       age={value.age}
