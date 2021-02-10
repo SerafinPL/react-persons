@@ -4,10 +4,21 @@ import classes from'./Cockpit.module.css';
 
 const Cockpit = (props) => {
 
-	useEffect(() => (
-		console.log('Cockpit.js useEffect')
-	));
+	useEffect(() => {
+		console.log('Cockpit.js useEffect');
+		// http request 
+		setTimeout(() => {
+			alert('Saved Data');
+		}, 1000);
+	}, [props.persons]);
 
+	useEffect(() => {
+		console.log('Cockpit.js useEffect ');
+		// http request 
+		setTimeout(() => {
+			alert('First time');
+		}, 1000);
+	}, []); // jeżeli tablica jest pusta to tylko przy pierwszym renderze
 
 	let klasyParagrafu = [];//['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
 
