@@ -34,15 +34,15 @@ const Cockpit = (props) => {
 		return () =>{
 			console.log('Cockpit.js clean from 3useEffect');
 		}
-	},); // brak tablicy effekt wykonywany zawsze wraz z czyszczeniem
+	},); // brak tablicy effekt wykonywany zawsze wraz z czyszczeniem z return
 
 
 	let klasyParagrafu = [];//['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
 
-    if (props.persons.length <= 2){
+    if (props.personsLength <= 2){
       klasyParagrafu.push(classes.colorRed);
     }
-    if (props.persons.length <=1) {
+    if (props.personsLength <=1) {
       klasyParagrafu.push(classes.bold);
     }
     klasyParagrafu = klasyParagrafu.join(' '); 
@@ -71,4 +71,5 @@ const Cockpit = (props) => {
 		);
 }
 
-export default Cockpit;
+export default React.memo(Cockpit); // zabezpiecza przed zbędnym renderowaniem jeżeli 
+									//się props nie zmienia
