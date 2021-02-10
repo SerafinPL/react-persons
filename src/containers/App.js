@@ -3,6 +3,8 @@ import PersonCL from '../components/Persons/Person/Person-class';
 import PersonsCL from '../components/Persons/Persons-class';
 import Cockpit from '../components/Cockpit/Cockpit';
 import WithClass from '../hoc/withClass';
+import Aux from '../hoc/Aux';
+import withClass2 from '../hoc/withClass2';
 
 import classes from'./App.module.css';
 
@@ -110,7 +112,8 @@ class App extends Component {
 
     return (
       
-      <WithClass classes={classes.App}>
+      {/*<WithClass classes={classes.App}>*/}
+      <Aux>
         <button className={classes.Guzik}
           onClick={() => {
                       if (this.state.showCockpit){
@@ -132,8 +135,8 @@ class App extends Component {
                 /> : null}
         {widok}    
         
-        
-      </WithClass>
+      </Aux>
+      {/*<WithClass>*/}
       
     );
   }
