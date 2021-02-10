@@ -35,6 +35,10 @@ class Persons extends Component 	{
     console.log(Snapshot); // uzycie snapshot z getSnapshotBeforeUpdate
   }
 
+  componentWillUnmount(){
+    console.log('Persons.js componentWillUnmount');
+  }
+
     render(){
 			console.log('PERSONS.js rendering....');
 			return(

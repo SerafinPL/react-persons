@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  margin: 20px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 4px #ddd;
 }
 
 .colorRed{

@@ -22,7 +22,8 @@ class App extends Component {
 
     ],
     kolejnaZmienna: 'inna zmienna', // to nie znika
-    pokazPersons: false
+    pokazPersons: false,
+    showCockpit: true
   }
 
   static getDerivedStateFromProps(props, state){
@@ -109,14 +110,25 @@ class App extends Component {
     return (
       
       <div className={classes.App}>
+        <button 
+          onClick={() => {
+                      if (this.state.showCockpit){
+                        this.setState({showCockpit : false});
+                      } else {
+                        this.setState({showCockpit : true});
+                      }
+                    }}
+        > 
+          Pokaż/Ukryj Kokpit {this.props.appTitle}
+        </button>
         
-        
-        <Cockpit 
-          title={this.props.appTitle}
-          showPersons={this.state.pokazPersons} 
-          persons={this.state.persons}
-          clicked={this.togglePersonHandler}
-        />
+        { this.state.showCockpit ?
+          <Cockpit 
+                  title={this.props.appTitle}
+                  showPersons={this.state.pokazPersons} 
+                  persons={this.state.persons}
+                  clicked={this.togglePersonHandler}
+                /> : null}
         {widok}    
         
         
