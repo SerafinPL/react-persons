@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import classes from'./Cockpit.module.css';
 
 const Cockpit = (props) => {
+
+	useEffect(() => (
+		console.log('Cockpit.js useEffect')
+	));
 
 
 	let klasyParagrafu = [];//['colorRed', 'bold'].join(' '); // wynik "colorRed bold" jako string
