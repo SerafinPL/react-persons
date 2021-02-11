@@ -21,9 +21,15 @@ class Person extends Component {
 		{/*<React.Fragment>*/}
 		{/*<Aux> Pusty wraper */}
 		
-			<p onClick={this.props.funkcja}>Jestem {this.props.name} i mam {this.props.age} lat!</p>
+			<p onClick={this.props.funkcja}>
+				Jestem {this.props.name} i mam {this.props.age} lat!
+			</p>
 			<p>{this.props.children}</p>
-			<input type="text" onChange={this.props.zmiana} value={this.props.name} />
+			<input 
+				type="text" 
+				onChange={this.props.zmiana} 
+				value={this.props.name} 
+			/>
 		
 		{/*</Aux>*/}
 		{/*</React.Fragment>*/}
