@@ -112,8 +112,9 @@ class App extends Component {
 
     return (
       
-      {/*<WithClass classes={classes.App}>*/}
-      <Aux>
+      
+      
+      <WithClass classes={classes.App}>
         <button className={classes.Guzik}
           onClick={() => {
                       if (this.state.showCockpit){
@@ -126,17 +127,17 @@ class App extends Component {
           Pokaż/Ukryj Kokpit {this.props.appTitle}
         </button>
         
-        { this.state.showCockpit ?
+         {this.state.showCockpit ?(
           <Cockpit 
                   title={this.props.appTitle}
                   showPersons={this.state.pokazPersons} 
                   personsLength={this.state.persons.length}
                   clicked={this.togglePersonHandler}
-                /> : null}
+                />) : null}
         {widok}    
-        
-      </Aux>
-      {/*<WithClass>*/}
+      </WithClass>  
+      
+      
       
     );
   }
