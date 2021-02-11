@@ -26,7 +26,8 @@ class App extends Component {
     ],
     kolejnaZmienna: 'inna zmienna', // to nie znika
     pokazPersons: false,
-    showCockpit: true
+    showCockpit: true,
+    changeCounter: 0
   }
 
   static getDerivedStateFromProps(props, state){
@@ -71,8 +72,14 @@ class App extends Component {
     const noweLudziki = [...this.state.persons];
     noweLudziki[ludzikIndex] = ludzik;
 
-    this.setState({
-      persons: noweLudziki })
+    this.setState((prevState, props) => {
+      
+      return{
+                persons: noweLudziki,
+                changeCounter: prevState.changeCounter + 1 
+              };
+          }
+    );
   }
 
   usunPersonHandler = (personIndex) => {
@@ -128,12 +135,15 @@ class App extends Component {
         </button>
         
          {this.state.showCockpit ?(
+          <>
+          <p>{this.state.changeCounter}</p>
           <Cockpit 
                   title={this.props.appTitle}
                   showPersons={this.state.pokazPersons} 
                   personsLength={this.state.persons.length}
                   clicked={this.togglePersonHandler}
-                />) : null}
+                />
+          </>) : null}
         {widok}    
       </WithClass>  
       

@@ -17,15 +17,17 @@ class Person extends Component {
 	
 	
 	return(
-		<React.Fragment>
+		<div className={classes.persons}>
+		{/*<React.Fragment>*/}
 		{/*<Aux> Pusty wraper */}
-		{/*<div className={classes.persons}>*/}
+		
 			<p onClick={this.props.funkcja}>Jestem {this.props.name} i mam {this.props.age} lat!</p>
 			<p>{this.props.children}</p>
 			<input type="text" onChange={this.props.zmiana} value={this.props.name} />
-		{/*</div>
-		</Aux>*/}
-		</React.Fragment>
+		
+		{/*</Aux>*/}
+		{/*</React.Fragment>*/}
+		</div>
 
 	);
 	}

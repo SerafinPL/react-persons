@@ -2,11 +2,11 @@ import React from 'react';
 				// Nazwa komponentu. // potrzebne zasoby
 const withClass2 = (WrappedComponent, classNameArg) => {
 
-		return props => {
+		return( props => {
 			<div className={classNameArg}>
-				<WrappedComponent />
+				<WrappedComponent {...props}/>
 			</div>
-		};
+		})
 };
 
 

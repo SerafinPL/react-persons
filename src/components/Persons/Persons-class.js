@@ -64,7 +64,7 @@ class Persons extends PureComponent 	{
                     />
 
             )
-          } )
+          } ) 
 		)
   }  		
 }
