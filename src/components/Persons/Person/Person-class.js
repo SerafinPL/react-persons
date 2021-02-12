@@ -31,7 +31,7 @@ class Person extends Component {
 		<div className={classes.persons}>
 		{/*<React.Fragment>*/}
 		{/*<Aux> Pusty wraper */}
-		
+			{this.props.isAuth ? <p>Authenticated!</p> : <p>Please Log in</p>}
 			<p onClick={this.props.funkcja}>
 				Jestem {this.props.name} i mam {this.props.age} lat!
 			</p>

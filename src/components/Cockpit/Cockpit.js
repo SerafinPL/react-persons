@@ -73,6 +73,9 @@ const Cockpit = (props) => {
 	        >
 	          (Pokaż/Schowaj) klasowe Elementy
 	        </button>
+	        <button onClick={props.login} className={classes.Guzik}>
+	        	Log in
+	        </button>
 	    </div>
 		);
 }
