@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import PersonCL from './Person/Person-class';
 
-import AuthContext from '../context/auth-context';
 
 
 class Persons extends PureComponent 	{
@@ -56,8 +55,7 @@ class Persons extends PureComponent 	{
     render(){
 			console.log('PERSONS.js rendering....');
 			return(
-        <AuthContext.Consumer>
-				{(context) => this.props.persons.map( (value, index) => {
+        this.props.persons.map( (value, index) => {
                          return( 
                              <PersonCL 
                                funkcja={() => this.props.clicked(index)}
@@ -65,12 +63,11 @@ class Persons extends PureComponent 	{
                                age={value.age}
                                key={value.id} 
                                zmiana={(event) => this.props.changed(event, value.id)}
-                               isAuth={this.props.isAuthenticated}
+                               //isAuth={this.props.isAuthenticated}
                              />
                          );
-                   })} 
-        </AuthContext.Consumer>
-		  )
+                   })
+		  );
   }  		
 }
 

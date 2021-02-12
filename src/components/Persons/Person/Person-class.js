@@ -6,6 +6,9 @@ import Aux from '../../../hoc/Aux';
 
 import PropTypes from 'prop-types';
 
+import AuthContext from '../../context/auth-context';
+
+
 
 
 class Person extends Component {
@@ -15,12 +18,15 @@ class Person extends Component {
 		// nowy sposób tworzenia Referencji
 	}
 
+	static contextType = AuthContext;
+
 	 componentDidMount() {
 	 	// użycie starej referencji
 	 	//this.inputElement.focus();
 
 	 	//użycie nowej referencji
 	 	this.inputElementRef.current.focus();
+	 	console.log(this.context.authenticated);
 	 }
 
 	render(){
@@ -31,7 +37,14 @@ class Person extends Component {
 		<div className={classes.persons}>
 		{/*<React.Fragment>*/}
 		{/*<Aux> Pusty wraper */}
-			{this.props.isAuth ? <p>Authenticated!</p> : <p>Please Log in</p>}
+			{// <AuthContext.Consumer>
+			// {
+			// 	(context) => context.authenticated ? <p>Authenticated!</p> : <p>Please Log in</p>
+			// }
+			// </AuthContext.Consumer>  // podstawowe użycie context
+			}
+
+			{this.context.authenticated ? <p>Authenticated!</p> : <p>Please Log in</p>}
 			<p onClick={this.props.funkcja}>
 				Jestem {this.props.name} i mam {this.props.age} lat!
 			</p>

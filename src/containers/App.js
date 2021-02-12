@@ -119,7 +119,7 @@ class App extends Component {
               persons={this.state.persons}
               clicked={this.usunPersonHandler}
               changed={this.zmianaImieniaHandler}
-              isAuthenticated={this.state.authenticated}
+              //isAuthenticated={this.state.authenticated}
           />
         );
 
@@ -153,7 +153,7 @@ class App extends Component {
                     showPersons={this.state.pokazPersons} 
                     personsLength={this.state.persons.length}
                     clicked={this.togglePersonHandler}
-                    login={this.loginHandler}
+                    //login={this.loginHandler}
                   />
             </>) : null}
           {widok}
