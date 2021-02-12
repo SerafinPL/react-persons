@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import classes from'./Cockpit.module.css';
 
 const Cockpit = (props) => {
+
+	const toggleBtnRef = useRef(null);
+
+	
 
 	useEffect(() => {
 		console.log('Cockpit.js 1useEffect');
@@ -17,13 +21,14 @@ const Cockpit = (props) => {
 
 	useEffect(() => {
 		console.log('Cockpit.js 2useEffect ');
+		toggleBtnRef.current.click();
 		// http request 
-		const timer = setTimeout(() => {
-			alert('First time');
-		}, 1000);
+		// const timer = setTimeout(() => {
+		// 	alert('First time');
+		// }, 1000);
 		
 		return () =>{
-			clearTimeout(timer);
+			// clearTimeout(timer);
 			console.log('Cockpit.js clean from 2useEffect');
 		}
 	}, []); // jeżeli tablica jest pusta to tylko przy pierwszym renderze return przy odmontowywaniu
@@ -62,6 +67,7 @@ const Cockpit = (props) => {
 	        	ale działa na classach i Stylowana CSS Modules
 	        </p>
 	        <button 
+	        ref={toggleBtnRef}
 	        className={KlasyGuzika.join(' ')}
 	        onClick={props.clicked}
 	        >
