@@ -8,11 +8,20 @@ import PropTypes from 'prop-types';
 
 
 
-
-
-
 class Person extends Component {
+	constructor(props){
+		super(props);
+		this.inputElementRef = React.createRef();
+		// nowy sposób tworzenia Referencji
+	}
 
+	 componentDidMount() {
+	 	// użycie starej referencji
+	 	//this.inputElement.focus();
+
+	 	//użycie nowej referencji
+	 	this.inputElementRef.current.focus();
+	 }
 
 	render(){
 	console.log('Person.js rendering...');
@@ -27,7 +36,10 @@ class Person extends Component {
 				Jestem {this.props.name} i mam {this.props.age} lat!
 			</p>
 			<p>{this.props.children}</p>
-			<input 
+			<input
+				// stary sposób tworzenia referencji
+				//ref={ (RefInputEl) => {this.inputElement = RefInputEl} }
+				ref={this.inputElementRef}
 				type="text" 
 				onChange={this.props.zmiana} 
 				value={this.props.name} 
