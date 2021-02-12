@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react';
 import PersonCL from './Person/Person-class';
 
+import AuthContext from '../../context/auth-context';
+
 
 class Persons extends PureComponent 	{
 

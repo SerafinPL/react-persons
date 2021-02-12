@@ -6,6 +6,8 @@ import WithClass from '../hoc/withClass';
 import Aux from '../hoc/Aux';
 import withClass2 from '../hoc/withClass2';
 
+import AuthContext from '../components/context/auth-context.js'
+
 import classes from'./App.module.css';
 
 
@@ -139,19 +141,23 @@ class App extends Component {
         > 
           Pokaż/Ukryj Kokpit {this.props.appTitle}
         </button>
-        
-         {this.state.showCockpit ?(
-          <>
-            <p>{this.state.changeCounter}</p>
-            <Cockpit 
-                  title={this.props.appTitle}
-                  showPersons={this.state.pokazPersons} 
-                  personsLength={this.state.persons.length}
-                  clicked={this.togglePersonHandler}
-                  login={this.loginHandler}
-                />
-          </>) : null}
-        {widok}    
+        <AuthContext.Provider value={ 
+              {authenticated : this.state.authenticated, 
+              login: this.loginHandler} 
+        }>
+           {this.state.showCockpit ?(
+            <>
+              <p>{this.state.changeCounter}</p>
+              <Cockpit 
+                    title={this.props.appTitle}
+                    showPersons={this.state.pokazPersons} 
+                    personsLength={this.state.persons.length}
+                    clicked={this.togglePersonHandler}
+                    login={this.loginHandler}
+                  />
+            </>) : null}
+          {widok}
+        </AuthContext.Provider>    
       </WithClass>  
       
       
