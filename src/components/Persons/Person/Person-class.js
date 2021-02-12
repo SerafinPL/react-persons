@@ -4,6 +4,8 @@ import classes from'./Person.module.css';
 
 import Aux from '../../../hoc/Aux';
 
+import PropTypes from 'prop-types';
+
 
 
 
@@ -38,5 +40,13 @@ class Person extends Component {
 	);
 	}
 }
+
+Person.propTypes = {
+	funkcja: PropTypes.func,
+	name: PropTypes.string,
+	age: PropTypes.number,
+	zmiana: PropTypes.func,
+}
+
 
 export default Person;
