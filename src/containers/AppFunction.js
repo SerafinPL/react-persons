@@ -61,11 +61,11 @@ const AppFunction = props => {
       <div className="App">
         <h1> To jest reactowa Aplikacja</h1>
         <p>ale działa na Funkcjach</p>
-        <button onClick={togglePersonHandler}>Wyświetl schowaj Funkcyjne Komponenty</button>
+        <button onClick={togglePersonHandler} className="Guzik">Wyświetl schowaj Funkcyjne Komponenty</button>
 	    {  	widokState === true ? // podobno gorsze rozwiązanie
 	    	/*this.state.pokazPersons === true ?   */ // wersja dla Klasowych elementów
 	        <div>
-		        <button onClick={zmienImieHandler.bind(this, "Marcinek")}>Zmień imię</button>
+		        <button onClick={zmienImieHandler.bind(this, "Marcinek")} className="Guzik">Zmień imię</button>
 
 		        <Person 		/* Lepsze dowązanie*/
 		        	name={personsState.persons[0].name} 
